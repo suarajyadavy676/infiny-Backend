@@ -10,7 +10,7 @@ require('dotenv').config()
 let port = process.env.PORT || 4000
 
 //for production
-const allowedOrigins = ['https://infinyschool.vercel.app/','https://frontend-git-main-suraj-yadavs-projects.vercel.app/', 'http://localhost:3000/', ];
+const allowedOrigins = ['https://infiny-school.netlify.app/','https://frontend-git-main-suraj-yadavs-projects.vercel.app/', 'http://localhost:3000/', ];
 
 const corsOptions = {
   origin: function (origin, callback) {
