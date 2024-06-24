@@ -10,18 +10,25 @@ require('dotenv').config()
 let port = process.env.PORT || 4000
 
 //for production
-const allowedOrigins = ['https://infiny-school.netlify.app/','https://frontend-git-main-suraj-yadavs-projects.vercel.app/', 'http://localhost:3000/', ];
+const allowedOrigins = [
+  'https://infiny-school.netlify.app',
+  'https://frontend-git-main-suraj-yadavs-projects.vercel.app',
+  'http://localhost:5173'
+];
 
 const corsOptions = {
   origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+    console.log(`Origin: ${origin}`); // Log the origin for debugging
+
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
     }
   },
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
 };
+
 app.use(cors(corsOptions));
 
 // local use
