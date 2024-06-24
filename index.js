@@ -12,6 +12,7 @@ let port = process.env.PORT || 4000
 //for production
 const allowedOrigins = [
   'https://infiny-school.netlify.app',
+  'https://www.infinyschool.com',
   'https://frontend-git-main-suraj-yadavs-projects.vercel.app',
   'http://localhost:5173'
 ];
