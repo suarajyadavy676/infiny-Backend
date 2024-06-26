@@ -10,30 +10,30 @@ require('dotenv').config()
 let port = process.env.PORT || 4000
 
 //for production
-const allowedOrigins = [
-  'https://infiny-school.netlify.app',
-  'https://www.infinyschool.com',
-  'https://frontend-git-main-suraj-yadavs-projects.vercel.app',
-  'http://localhost:5173'
-];
+// const allowedOrigins = [
+//   'https://www.infinyschool.com',
+//   'https://infiny-school.netlify.app',
+//   'https://frontend-git-main-suraj-yadavs-projects.vercel.app',
+//   'http://localhost:5173'
+// ];
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log(`Origin: ${origin}`); // Log the origin for debugging
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     console.log(`Origin: ${origin}`); // Log the origin for debugging
 
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+//     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // local use
-// app.use(cors());
+app.use(cors());
 
 // for ejs
 app.set('view engine','ejs')
