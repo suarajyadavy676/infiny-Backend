@@ -5,6 +5,7 @@ const UserData = require('../models/user.model')
 
 let userRouter = Router()
 
+// register
 userRouter.post('/register',async(req,res)=>{
   try {
     const {email,password,username,role} = req.body
@@ -24,6 +25,8 @@ userRouter.post('/register',async(req,res)=>{
     return res.status(500).send("server error in register time")
   }
 })
+
+// sign in
 
 userRouter.post('/signIn',async(req,res)=>{
   let {email}=req.body
